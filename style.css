@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #0a0a0a, #1a1a1a, #0a0a0a);
+  background-size: 600% 600%;
+  color: #fff;
+  padding: 20px;
+  animation: gradientShift 10s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #c084fc, #6A0DAD, #9b30ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShift 5s infinite linear;
+}
+
+@keyframes textShift {
+  0% {background-position: 0%;}
+  100% {background-position: 200%;}
+}
+
+.card {
+  background: rgba(26,26,26,0.7);
+  border: 2px solid #6A0DAD;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 620px;
+  margin: 30px auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(154, 48, 255, 0.4);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px rgba(154, 48, 255, 0.8);
+  transform: translateY(-5px) rotateX(2deg);
+}
+
+.card p {
+  line-height: 1.8;
+  font-size: 16px;
+  color: #ddd;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin: 12px 0;
+}
+
+ul li a {
+  display: block;
+  padding: 14px 20px;
+  background: rgba(106, 13, 173, 0.85);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px #9b30ff;
+  transition: all 0.4s ease;
+}
+
+ul li a::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 80%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: all 0.5s ease;
+  border-radius: 50%;
+}
+
+ul li a:active::after {
+  transform: translate(-50%, -50%) scale(3);
+  opacity: 0.6;
+}
+
+ul li a:hover {
+  background: #9b30ff;
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #9b30ff, 0 0 50px #9b30ff;
+}
